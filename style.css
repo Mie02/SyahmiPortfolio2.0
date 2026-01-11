@@ -631,3 +631,21 @@ h2 {
   z-index: 0;
 }
 
+a, button {
+  position: relative;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #7dd3fc;
+  transition: .4s;
+}
+
+a:hover::after {
+  width: 100%;
+}
