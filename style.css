@@ -536,3 +536,44 @@ h1{margin:0 0 10px;font-size:clamp(30px,3vw,52px);line-height:1.05}
   opacity:.7;
 }
 .projectThumb:has(img)::after{ display:none; }
+/* ==== Workshop gallery (prevents breaking layout) ==== */
+.galleryStrip{
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding: 12px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.galleryStrip::-webkit-scrollbar{ height: 10px; }
+.galleryStrip::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,.18);
+  border-radius: 999px;
+}
+
+.galleryStrip .shot{
+  flex: 0 0 auto;
+  width: 520px;          /* card width */
+  height: 290px;         /* fixed height so it never breaks */
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.25);
+  scroll-snap-align: start;
+}
+
+.galleryStrip .shot img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* IMPORTANT: crops wide images nicely */
+  display: block;
+}
+
+@media (max-width: 900px){
+  .galleryStrip .shot{ width: 85vw; height: 240px; }
+}
+
