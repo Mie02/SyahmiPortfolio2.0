@@ -1,3 +1,9 @@
+window.addEventListener("scroll", () => {
+  const hero = document.querySelector(".hero");
+  const y = window.scrollY;
+  hero.style.transform = `translateY(${y * 0.2}px)`;
+});
+
 // footer year
 document.addEventListener("DOMContentLoaded", () => {
   const y = document.getElementById("year");
@@ -135,4 +141,5 @@ function initImageModal(){
     if (e.key === "Escape") close();
   });
 }
+
 
