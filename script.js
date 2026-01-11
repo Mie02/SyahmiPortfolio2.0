@@ -142,4 +142,9 @@ function initImageModal(){
   });
 }
 
+document.addEventListener("mousemove", e => {
+  const glow = document.getElementById("cursorGlow");
+  glow.style.left = e.clientX + "px";
+  glow.style.top = e.clientY + "px";
+});
 
