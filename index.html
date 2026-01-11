@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <!-- Cursor glow MUST be inside body -->
+  <!-- MUST be inside body -->
   <div id="cursorGlow" aria-hidden="true"></div>
 
   <header class="nav">
@@ -91,41 +91,7 @@
       </div>
     </section>
 
-    <!-- ABOUT ME -->
-    <section class="section reveal" id="about">
-      <div class="aboutGrid">
-        <div class="card aboutText">
-          <h2>About Me</h2>
-          <p>
-            I am <b>Ahmad Syahmi Zufayri</b>, an Interactive Media student who enjoys building creative digital
-            projects. I like combining programming and design to create things that are both functional and
-            visually appealing.
-          </p>
-          <p>
-            My work focuses on <b>Unity game development</b>, <b>OpenGL 3D modeling</b>,
-            <b>Motion Graphics (After Effects & Premiere Pro)</b>, and <b>Computer Animation (Blender)</b>.
-            I enjoy experimenting with different tools and improving my skills by turning ideas into interactive
-            experiences.
-          </p>
-          <p>
-            Through my projects, I aim to improve how people learn, interact, and experience digital content.
-          </p>
-        </div>
-
-        <div class="card aboutStats">
-          <h3>Quick Facts</h3>
-          <ul>
-            <li>🎓 Interactive Media Student</li>
-            <li>🕹 Unity & C# Developer</li>
-            <li>🎨 Motion Graphics & Animation</li>
-            <li>🧊 OpenGL & 3D Modeling</li>
-            <li>📍 Malaysia</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURED CAROUSEL -->
+    <!-- FEATURED -->
     <section id="featured" class="section reveal">
       <div class="sectionHead">
         <h2>Featured Work</h2>
@@ -161,33 +127,6 @@
       </div>
     </section>
 
-    <!-- QUICK SKILLS -->
-    <section class="section reveal">
-      <div class="sectionHead">
-        <h2>Skills</h2>
-        <p class="muted">What I’m comfortable working with.</p>
-      </div>
-
-      <div class="skillGrid">
-        <div class="skillCard">
-          <div class="skillTitle">Interactive / Unity</div>
-          <div class="skillText">Drag & drop, UI flow, timers, scoring, difficulty modes.</div>
-        </div>
-        <div class="skillCard">
-          <div class="skillTitle">3D / OpenGL</div>
-          <div class="skillText">Primitives, transformations, matrix stack, modular building parts.</div>
-        </div>
-        <div class="skillCard">
-          <div class="skillTitle">Video / Motion</div>
-          <div class="skillText">Kinetic typography, match cuts, pacing, audio sync.</div>
-        </div>
-        <div class="skillCard">
-          <div class="skillTitle">Blender</div>
-          <div class="skillText">Modeling practice, lighting, materials, clean renders.</div>
-        </div>
-      </div>
-    </section>
-
     <!-- CONTACT -->
     <section class="section reveal" id="contact">
       <div class="contactCard">
@@ -198,7 +137,6 @@
           <div class="contactLinks">
             <a class="btn ghost" href="https://github.com/Mie02" target="_blank" rel="noreferrer">GitHub</a>
             <a class="btn ghost" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
-            <!-- FIX: email should be mailto -->
             <a class="btn primary" href="mailto:ahmadsyahmi723@gmail.com">Email</a>
           </div>
         </div>
@@ -218,7 +156,7 @@
     </footer>
   </main>
 
-  <!-- Put script at the bottom so DOM exists before JS runs -->
+  <!-- IMPORTANT: script at bottom -->
   <script src="script.js"></script>
 </body>
 
