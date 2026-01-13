@@ -160,3 +160,18 @@ function initCursorGlow() {
     glow.style.top = e.clientY + "px";
   });
 }
+
+// image zoom
+document.addEventListener("click", e => {
+  if(e.target.classList.contains("zoomable")){
+    const lb = document.getElementById("lightbox");
+    const img = document.getElementById("lightboxImg");
+    img.src = e.target.src;
+    lb.style.display = "flex";
+  }
+});
+
+document.getElementById("lightbox")?.addEventListener("click", () => {
+  document.getElementById("lightbox").style.display = "none";
+});
+
