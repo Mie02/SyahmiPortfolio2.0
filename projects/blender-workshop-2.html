@@ -37,12 +37,12 @@
 <p class="muted">Scroll horizontally (or swipe on mobile). Click to enlarge.</p>
 
 <div class="galleryStrip">
-  <div class="shot"><img src="../images/ws1.png" alt="Workshop 2 - 1"></div>
-  <div class="shot"><img src="../images/ws2.png" alt="Workshop 2 - 2"></div>
-  <div class="shot"><img src="../images/ws3.png" alt="Workshop 2 - 3"></div>
-  <div class="shot"><img src="../images/ws4.png" alt="Workshop 2 - 4"></div>
-  <div class="shot"><img src="../images/ws5.png" alt="Workshop 2 - 5"></div>
-  <div class="shot"><img src="../images/ws6.png" alt="Workshop 2 - 6"></div>
+  <div class="shot"><img class="zoomable" src="../images/ws1.png" alt="Workshop 2 - 1" loading="lazy" decoding="async"></div>
+  <div class="shot"><img class="zoomable" src="../images/ws2.png" alt="Workshop 2 - 2" loading="lazy" decoding="async"></div>
+  <div class="shot"><img class="zoomable" src="../images/ws3.png" alt="Workshop 2 - 3" loading="lazy" decoding="async"></div>
+  <div class="shot"><img class="zoomable" src="../images/ws4.png" alt="Workshop 2 - 4" loading="lazy" decoding="async"></div>
+  <div class="shot"><img class="zoomable" src="../images/ws5.png" alt="Workshop 2 - 5" loading="lazy" decoding="async"></div>
+  <div class="shot"><img class="zoomable" src="../images/ws6.png" alt="Workshop 2 - 6" loading="lazy" decoding="async"></div>
 </div>
       
     </section>
@@ -83,6 +83,12 @@
   </div>
 
   <script src="../script.js"></script>
+<!-- Lightbox (click any image to zoom) -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightboxClose" id="lightboxClose" aria-label="Close (Esc)">×</button>
+    <img id="lightboxImg" alt="Zoomed image" />
+    <div class="lightboxHint">Click outside / press Esc to close</div>
+  </div>
 </body>
 </html>
 

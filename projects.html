@@ -25,7 +25,7 @@
 
       <div class="grid">
         <a class="project-card" href="projects/drag-and-drop-game.html">
-          <div class="thumb"><img src="images/dd3.png" alt="Flashcard + Drag & Drop Game"></div>
+          <div class="thumb"><img class="zoomable" src="images/dd3.png" alt="Flashcard + Drag & Drop Game" loading="lazy" decoding="async"></div>
           <div class="project-body">
             <h3>Flashcard + Drag & Drop Game</h3>
             <p>Unity learning game with difficulty modes, timer, scoring & audio.</p>
@@ -34,7 +34,7 @@
         </a>
 
         <a class="project-card" href="projects/opengl-cafeteria.html">
-          <div class="thumb"><img src="images/cf5.png" alt="OpenGL 3D Cafeteria Module"></div>
+          <div class="thumb"><img class="zoomable" src="images/cf5.png" alt="OpenGL 3D Cafeteria Module" loading="lazy" decoding="async"></div>
           <div class="project-body">
             <h3>OpenGL 3D Cafeteria Module</h3>
             <p>3D building using primitives, transformations & matrix stack (GLUT).</p>
@@ -43,7 +43,7 @@
         </a>
 
         <a class="project-card" href="projects/motion-graphics.html">
-          <div class="thumb"><img src="images/mg3.png" alt="Motion Graphics Video"></div>
+          <div class="thumb"><img class="zoomable" src="images/mg3.png" alt="Motion Graphics Video" loading="lazy" decoding="async"></div>
           <div class="project-body">
             <h3>Motion Graphics</h3>
             <p>Kinetic typography + clean transitions + music sync.</p>
@@ -52,7 +52,7 @@
         </a>
 
         <a class="project-card" href="projects/computer-animation.html">
-          <div class="thumb"><img src="images/ca1.png" alt="Computer Animation Project"></div>
+          <div class="thumb"><img class="zoomable" src="images/ca1.png" alt="Computer Animation Project" loading="lazy" decoding="async"></div>
           <div class="project-body">
             <h3>Computer Animation Project</h3>
             <p>Animation principles applied: timing, spacing, squash & stretch.</p>
@@ -61,7 +61,7 @@
         </a>
 
         <a class="project-card" href="projects/blender-workshop-2.html">
-          <div class="thumb"><img src="images/ws5.png" alt="Blender Workshop 2"></div>
+          <div class="thumb"><img class="zoomable" src="images/ws5.png" alt="Blender Workshop 2" loading="lazy" decoding="async"></div>
           <div class="project-body">
             <h3>Workshop 2</h3>
             <p>Modeling + materials + lighting + basic render workflow + camera angle.</p>
@@ -70,7 +70,7 @@
         </a>
 
         <a class="project-card" href="projects/bujang-lapok.html">
-          <div class="thumb"><img src="images/bl1.jpg" alt="Bujang Lapok Recreate"></div>
+          <div class="thumb"><img class="zoomable" src="images/bl1.jpg" alt="Bujang Lapok Recreate" loading="lazy" decoding="async"></div>
           <div class="project-body">
             <h3>Bujang Lapok Recreate</h3>
             <p>Recreate scene/style study with camera angles & mood lighting.</p>
@@ -87,6 +87,12 @@
   </main>
 
   <script src="../script.js"></script>
+<!-- Lightbox (click any image to zoom) -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightboxClose" id="lightboxClose" aria-label="Close (Esc)">×</button>
+    <img id="lightboxImg" alt="Zoomed image" />
+    <div class="lightboxHint">Click outside / press Esc to close</div>
+  </div>
 </body>
 </html>
 

@@ -75,7 +75,7 @@
 
       <div class="sceneGrid">
         <div class="shot">
-          <img data-modal="img" src="../images/bl1.jpg" alt="Bujang Lapok - Shot 1">
+          <img class="zoomable" data-modal="img" src="../images/bl1.jpg" alt="Bujang Lapok - Shot 1" loading="lazy" decoding="async">
           <div class="meta">
             <b>Shot 1 — Establishing</b>
             <span>Wide framing to set the environment and mood.</span>
@@ -83,7 +83,7 @@
         </div>
 
         <div class="shot">
-          <img data-modal="img" src="../images/bl2.jpg" alt="Bujang Lapok - Shot 2">
+          <img class="zoomable" data-modal="img" src="../images/bl2.jpg" alt="Bujang Lapok - Shot 2" loading="lazy" decoding="async">
           <div class="meta">
             <b>Shot 2 — Angle Match</b>
             <span>Camera angle recreated to match original composition.</span>
@@ -91,7 +91,7 @@
         </div>
 
         <div class="shot">
-          <img data-modal="img" src="../images/bl3.jpg" alt="Bujang Lapok - Shot 3">
+          <img class="zoomable" data-modal="img" src="../images/bl3.jpg" alt="Bujang Lapok - Shot 3" loading="lazy" decoding="async">
           <div class="meta">
             <b>Shot 3 — Mood Lighting</b>
             <span>Lighting tuned to match tone and contrast.</span>
@@ -99,7 +99,7 @@
         </div>
 
         <div class="shot">
-          <img data-modal="img" src="../images/bl4.png" alt="Bujang Lapok - Shot 4">
+          <img class="zoomable" data-modal="img" src="../images/bl4.png" alt="Bujang Lapok - Shot 4" loading="lazy" decoding="async">
           <div class="meta">
             <b>Shot 4 — Final Look</b>
             <span>Final output with refined look and clarity.</span>
@@ -112,12 +112,12 @@
       <h2>More Frames</h2>
       <div class="card">
         <div class="galleryGrid">
-          <img data-modal="img" src="../images/bl1.jpg" alt="Bujang Lapok 1">
-          <img data-modal="img" src="../images/bl2.jpg" alt="Bujang Lapok 2">
-          <img data-modal="img" src="../images/bl3.jpg" alt="Bujang Lapok 3">
-          <img data-modal="img" src="../images/bl4.png" alt="Bujang Lapok 4">
-          <img data-modal="img" src="../images/bl5.png" alt="Bujang Lapok 5">
-          <img data-modal="img" src="../images/bl6.png" alt="Bujang Lapok 6">
+          <img class="zoomable" data-modal="img" src="../images/bl1.jpg" alt="Bujang Lapok 1" loading="lazy" decoding="async">
+          <img class="zoomable" data-modal="img" src="../images/bl2.jpg" alt="Bujang Lapok 2" loading="lazy" decoding="async">
+          <img class="zoomable" data-modal="img" src="../images/bl3.jpg" alt="Bujang Lapok 3" loading="lazy" decoding="async">
+          <img class="zoomable" data-modal="img" src="../images/bl4.png" alt="Bujang Lapok 4" loading="lazy" decoding="async">
+          <img class="zoomable" data-modal="img" src="../images/bl5.png" alt="Bujang Lapok 5" loading="lazy" decoding="async">
+          <img class="zoomable" data-modal="img" src="../images/bl6.png" alt="Bujang Lapok 6" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
@@ -126,7 +126,32 @@
       <span>© <span id="year"></span> Syahmi Zufayri</span>
       <span class="muted">Scene Recreate</span>
     </footer>
-  </main>
+  
+    <section class="section reveal">
+      <div class="sectionHead">
+        <h2>Video Showcase</h2>
+        <p class="muted">Watch a short highlight. Replace the link with your real video later.</p>
+      </div>
+
+      <div class="videoCard">
+        <div class="videoWrap">
+          <iframe
+            src="https://www.youtube.com/embed/ysz5S6PUM-U"
+            title="Bujang Lapok Recreate video"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="videoMeta">
+          <div class="capTitle">Bujang Lapok Recreate</div>
+          <div class="muted">Scene recreate / style study with camera angles & mood lighting.</div>
+        </div>
+      </div>
+    </section>
+    
+</main>
 
   <div class="modal" id="imgModal" aria-hidden="true">
     <div class="modalBox">
@@ -139,5 +164,11 @@
   </div>
 
   <script src="../script.js"></script>
+<!-- Lightbox (click any image to zoom) -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightboxClose" id="lightboxClose" aria-label="Close (Esc)">×</button>
+    <img id="lightboxImg" alt="Zoomed image" />
+    <div class="lightboxHint">Click outside / press Esc to close</div>
+  </div>
 </body>
 </html>

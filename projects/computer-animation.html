@@ -58,7 +58,32 @@
   <main class="container">
     <a class="back" href="../projects.html">← Back to Projects</a>
 
-    <section class="card" style="padding:18px">
+    
+    <section class="section reveal">
+      <div class="sectionHead">
+        <h2>Video Showcase</h2>
+        <p class="muted">Watch a short highlight. Replace the link with your real video later.</p>
+      </div>
+
+      <div class="videoCard">
+        <div class="videoWrap">
+          <iframe
+            src="https://www.youtube.com/embed/aqz-KE-bpKQ"
+            title="Computer Animation Project video"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="videoMeta">
+          <div class="capTitle">Computer Animation Project</div>
+          <div class="muted">Timing, spacing, squash & stretch — animated in keyframes.</div>
+        </div>
+      </div>
+    </section>
+    
+<section class="card" style="padding:18px">
       <h1 class="page-title">Computer Animation</h1>
       <p class="muted">
         An animation exercise applying core principles such as timing, spacing, squash & stretch,
@@ -89,7 +114,7 @@
           </p>
 
           <div class="thumb" style="height:220px;border-radius:18px;margin-top:10px">
-            <img data-modal="img" src="../images/ca1.png" alt="Computer Animation Cover">
+            <img class="zoomable" data-modal="img" src="../images/ca1.png" alt="Computer Animation Cover" loading="lazy" decoding="async">
           </div>
 
           <div class="tags" style="margin-top:10px">
@@ -103,12 +128,12 @@
       <h2>Frames</h2>
       <div class="card">
         <div class="galleryGrid">
-          <img data-modal="img" src="../images/ca1.png" alt="Computer Animation 1">
-          <img data-modal="img" src="../images/ca2.png" alt="Computer Animation 2">
-          <img data-modal="img" src="../images/ca3.png" alt="Computer Animation 3">
-          <img data-modal="img" src="../images/ca4.png" alt="Computer Animation 4">
-          <img data-modal="img" src="../images/ca5.png" alt="Computer Animation 5">
-          <img data-modal="img" src="../images/ca6.png" alt="Computer Animation 6">
+          <img class="zoomable" data-modal="img" src="../images/ca1.png" alt="Computer Animation 1" loading="lazy" decoding="async">
+          <img class="zoomable" data-modal="img" src="../images/ca2.png" alt="Computer Animation 2" loading="lazy" decoding="async">
+          <img class="zoomable" data-modal="img" src="../images/ca3.png" alt="Computer Animation 3" loading="lazy" decoding="async">
+          <img class="zoomable" data-modal="img" src="../images/ca4.png" alt="Computer Animation 4" loading="lazy" decoding="async">
+          <img class="zoomable" data-modal="img" src="../images/ca5.png" alt="Computer Animation 5" loading="lazy" decoding="async">
+          <img class="zoomable" data-modal="img" src="../images/ca6.png" alt="Computer Animation 6" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
@@ -130,5 +155,11 @@
   </div>
 
   <script src="../script.js"></script>
+<!-- Lightbox (click any image to zoom) -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightboxClose" id="lightboxClose" aria-label="Close (Esc)">×</button>
+    <img id="lightboxImg" alt="Zoomed image" />
+    <div class="lightboxHint">Click outside / press Esc to close</div>
+  </div>
 </body>
 </html>

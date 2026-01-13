@@ -39,11 +39,11 @@
 
       <div class="card">
         <div class="galleryGrid masonry">
-          <img data-modal="img" src="../images/cf1.png" alt="Cafeteria view 1">
-          <img data-modal="img" src="../images/cf2.png" alt="Cafeteria view 2">
-          <img data-modal="img" src="../images/cf3.png" alt="Cafeteria view 3">
-          <img data-modal="img" src="../images/cf4.png" alt="Cafeteria view 4">
-          <img data-modal="img" src="../images/cf5.png" alt="Cafeteria view 5">
+          <img class="zoomable" data-modal="img" src="../images/cf1.png" alt="Cafeteria view 1" loading="lazy" decoding="async">
+          <img class="zoomable" data-modal="img" src="../images/cf2.png" alt="Cafeteria view 2" loading="lazy" decoding="async">
+          <img class="zoomable" data-modal="img" src="../images/cf3.png" alt="Cafeteria view 3" loading="lazy" decoding="async">
+          <img class="zoomable" data-modal="img" src="../images/cf4.png" alt="Cafeteria view 4" loading="lazy" decoding="async">
+          <img class="zoomable" data-modal="img" src="../images/cf5.png" alt="Cafeteria view 5" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
@@ -84,6 +84,12 @@
   </div>
 
   <script src="../script.js"></script>
+<!-- Lightbox (click any image to zoom) -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightboxClose" id="lightboxClose" aria-label="Close (Esc)">×</button>
+    <img id="lightboxImg" alt="Zoomed image" />
+    <div class="lightboxHint">Click outside / press Esc to close</div>
+  </div>
 </body>
 </html>
 

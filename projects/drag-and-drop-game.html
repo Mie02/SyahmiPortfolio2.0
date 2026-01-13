@@ -51,10 +51,10 @@
 
       <div class="card">
         <div class="galleryGrid ddGrid">
-          <img data-modal="img" src="../images/dd1.png" alt="Drag & Drop screenshot 1">
-          <img data-modal="img" src="../images/dd2.png" alt="Drag & Drop screenshot 2">
-          <img data-modal="img" src="../images/dd3.png" alt="Drag & Drop screenshot 3">
-          <img data-modal="img" src="../images/dd4.png" alt="Drag & Drop screenshot 4">
+          <img class="zoomable" data-modal="img" src="../images/dd1.png" alt="Drag & Drop screenshot 1" loading="lazy" decoding="async">
+          <img class="zoomable" data-modal="img" src="../images/dd2.png" alt="Drag & Drop screenshot 2" loading="lazy" decoding="async">
+          <img class="zoomable" data-modal="img" src="../images/dd3.png" alt="Drag & Drop screenshot 3" loading="lazy" decoding="async">
+          <img class="zoomable" data-modal="img" src="../images/dd4.png" alt="Drag & Drop screenshot 4" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
@@ -95,5 +95,11 @@
   </div>
 
   <script src="../script.js"></script>
+<!-- Lightbox (click any image to zoom) -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightboxClose" id="lightboxClose" aria-label="Close (Esc)">×</button>
+    <img id="lightboxImg" alt="Zoomed image" />
+    <div class="lightboxHint">Click outside / press Esc to close</div>
+  </div>
 </body>
 </html>
