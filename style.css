@@ -699,3 +699,28 @@ h1,h2,h3{
   from{ transform: translate3d(-10px,-10px,0) scale(1); }
   to{ transform: translate3d(10px,12px,0) scale(1.03); }
 }
+
+/* ===== Lightbox ===== */
+#lightbox{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+
+#lightbox img{
+  max-width: 92%;
+  max-height: 92%;
+  border-radius: 12px;
+  box-shadow: 0 0 80px rgba(255,255,255,.15);
+  animation: zoomIn .25s ease;
+}
+
+@keyframes zoomIn{
+  from{transform:scale(.9);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
