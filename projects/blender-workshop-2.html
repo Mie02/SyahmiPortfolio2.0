@@ -1,141 +1,132 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Workshop 2 Blender & Premiere Pro — Syahmi</title>
-    <link rel="stylesheet" href="../style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blender Workshop 2 — Syahmi</title>
+  <meta name="description" content="Blender Workshop 2 — 3D modeling, materials, lighting, render workflow, and camera composition." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;900&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css" />
 </head>
-
 <body>
-    <header class="nav">
-        <div class="nav-inner">
-            <a class="logo" href="../index.html">Syahmi</a>
-            <nav class="links">
-                <a href="../index.html">Home</a>
-                <a href="../projects.html">Projects</a>
-                <a href="../index.html#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
+  <div class="mesh-bg" aria-hidden="true">
+    <div class="mesh-blob blob-1"></div>
+    <div class="mesh-blob blob-2"></div>
+    <div class="mesh-blob blob-3"></div>
+  </div>
+  <div id="cursorGlow" aria-hidden="true"></div>
 
-    <main class="container">
-        <a class="back" href="../projects.html">← Back to Projects</a>
-
-        <section class="card" style="padding:18px">
-            <h1 class="page-title">Workshop 2 Blender & Premiere Pro</h1>
-            <p class="muted">
-                A Blender practice workshop focusing on modeling, materials, lighting, and clean renders. This page uses a filmstrip layout to feel more “cinematic”.
-            </p>
-            <div class="tags" style="margin-top:10px">
-                <span>Blender</span><span>Modeling</span><span>Materials</span><span>Lighting</span><span>Render</span>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Workshop 2 Process</h2>
-            <p class="muted">Scroll horizontally (or swipe on mobile). Click to enlarge.</p>
-
-            <div class="galleryStrip">
-                <div class="shot"><img class="zoomable" src="../images/ws1.png" alt="Workshop 2 - 1" loading="lazy" decoding="async"></div>
-                <div class="shot"><img class="zoomable" src="../images/ws2.png" alt="Workshop 2 - 2" loading="lazy" decoding="async"></div>
-                <div class="shot"><img class="zoomable" src="../images/ws3.png" alt="Workshop 2 - 3" loading="lazy" decoding="async"></div>
-                <div class="shot"><img class="zoomable" src="../images/ws4.png" alt="Workshop 2 - 4" loading="lazy" decoding="async"></div>
-                <div class="shot"><img class="zoomable" src="../images/ws5.png" alt="Workshop 2 - 5" loading="lazy" decoding="async"></div>
-                <div class="shot"><img class="zoomable" src="../images/ws6.png" alt="Workshop 2 - 6" loading="lazy" decoding="async"></div>
-            </div>
-
-        </section>
-
-        <section class="section reveal">
-            <div class="sectionHead">
-                <h2 class="sectionTitle">Video Showcase</h2>
-
-                <div class="videoGrid">
-
-                    <div class="videoCard">
-                        <video controls muted preload="metadata">
-      <source src="../videos/ws2.mp4" type="video/mp4">
-    </video>
-                        <div class="videoCaption">Environment Build and Config</div>
-                    </div>
-
-                    <div class="videoCard">
-                        <video controls muted preload="metadata">
-      <source src="../videos/ws2p.mp4" type="video/mp4">
-    </video>
-                        <div class="videoCaption">Editing Video For Exhibition</div>
-                    </div>
-
-                    <div class="videoCard">
-                        <video controls preload="metadata">
-      <source src="../videos/motion3.mp4" type="video/mp4">
-    </video>
-                        <div class="videoCaption">Beat Sync Edit</div>
-                    </div>
-
-                    <div class="videoCard">
-                        <video controls preload="metadata">
-      <source src="../videos/motion4.mp4" type="video/mp4">
-    </video>
-                        <div class="videoCaption">Title Animation</div>
-                    </div>
-
-                    <div class="videoCard">
-                        <video controls preload="metadata">
-      <source src="../videos/motion5.mp4" type="video/mp4">
-    </video>
-                        <div class="videoCaption">Final Cut Preview</div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>What I learned</h2>
-            <div class="grid" style="grid-template-columns:repeat(3,1fr)">
-                <div class="skillCard">
-                    <div class="skillTitle">Modeling Practice</div>
-                    <div class="skillText">Cleaner shapes, consistent scale, better silhouettes.</div>
-                </div>
-                <div class="skillCard">
-                    <div class="skillTitle">Lighting & Mood</div>
-                    <div class="skillText">Using light placement to guide attention and style.</div>
-                </div>
-                <div class="skillCard">
-                    <div class="skillTitle">Presentation</div>
-                    <div class="skillText">Better framing and export for portfolio screenshots.</div>
-                </div>
-            </div>
-        </section>
-
-        <footer class="footer">
-            <span>© <span id="year"></span> Syahmi Zufayri</span>
-            <span class="muted">Blender Project</span>
-        </footer>
-    </main>
-
-    <!-- Modal -->
-    <div class="modal" id="imgModal" aria-hidden="true">
-        <div class="modalBox">
-            <img class="modalImg" alt="">
-            <div class="modalBar">
-                <span id="modalCaption">Preview</span>
-                <button class="modalBtn" id="modalClose">Close</button>
-            </div>
-        </div>
+  <header class="nav" id="navbar">
+    <div class="nav-inner">
+      <a class="logo" href="../index.html">Syahmi<span class="logo-dot">.</span></a>
+      <nav class="links" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </header>
 
-    <script src="../script.js"></script>
-    <!-- Lightbox (click any image to zoom) -->
-    <div id="lightbox" class="lightbox" aria-hidden="true">
-        <button class="lightboxClose" id="lightboxClose" aria-label="Close (Esc)">×</button>
-        <img id="lightboxImg" alt="Zoomed image" />
-        <div class="lightboxHint">Click outside / press Esc to close</div>
-    </div>
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="../index.html">Home</a>
+    <a href="../projects.html">Projects</a>
+    <a href="../index.html#contact">Contact</a>
+  </div>
+
+  <main class="container">
+    <a class="back" href="../projects.html">&larr; Back to Projects</a>
+
+    <section class="card reveal" style="padding:26px;margin-top:16px" aria-labelledby="projectTitle">
+      <h1 class="page-title" id="projectTitle">Blender Workshop <span class="grad">2</span></h1>
+      <p class="muted">
+        A Blender practice workshop focusing on 3D modeling, materials, lighting, and clean renders. Uses a filmstrip layout for a cinematic showcase feel.
+      </p>
+      <div class="tags" style="margin-top:12px">
+        <span>Blender</span><span>Modeling</span><span>Materials</span><span>Lighting</span><span>Render</span><span>Premiere Pro</span>
+      </div>
+    </section>
+
+    <section class="section reveal" aria-labelledby="filmstripTitle">
+      <div class="sectionHead">
+        <div>
+          <h2 id="filmstripTitle">Workshop <span class="grad">Gallery</span></h2>
+          <p class="muted">Scroll horizontally to browse. Click to enlarge.</p>
+        </div>
+      </div>
+      <div class="galleryStrip">
+        <div class="shot"><img class="zoomable" src="../images/ws1.png" alt="Workshop 2 render 1" loading="lazy" decoding="async"></div>
+        <div class="shot"><img class="zoomable" src="../images/ws2.png" alt="Workshop 2 render 2" loading="lazy" decoding="async"></div>
+        <div class="shot"><img class="zoomable" src="../images/ws3.png" alt="Workshop 2 render 3" loading="lazy" decoding="async"></div>
+        <div class="shot"><img class="zoomable" src="../images/ws4.png" alt="Workshop 2 render 4" loading="lazy" decoding="async"></div>
+        <div class="shot"><img class="zoomable" src="../images/ws5.png" alt="Workshop 2 render 5" loading="lazy" decoding="async"></div>
+        <div class="shot"><img class="zoomable" src="../images/ws6.png" alt="Workshop 2 render 6" loading="lazy" decoding="async"></div>
+      </div>
+    </section>
+
+    <section class="section reveal" aria-labelledby="videoTitle">
+      <div class="sectionHead">
+        <div>
+          <h2 id="videoTitle">Video <span class="grad">Showcase</span></h2>
+          <p class="muted">Watch the environment build and the final edit.</p>
+        </div>
+      </div>
+      <div class="videoGrid">
+        <div class="videoCard">
+          <video controls muted preload="metadata">
+            <source src="../videos/ws2.mp4" type="video/mp4">
+          </video>
+          <div class="videoCaption">Environment Build &amp; Config</div>
+        </div>
+        <div class="videoCard">
+          <video controls muted preload="metadata">
+            <source src="../videos/ws2p.mp4" type="video/mp4">
+          </video>
+          <div class="videoCaption">Editing Video for Exhibition</div>
+        </div>
+        <div class="videoCard">
+          <video controls preload="metadata">
+            <source src="../videos/motion3.mp4" type="video/mp4">
+          </video>
+          <div class="videoCaption">Beat Sync Edit</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" aria-labelledby="learnedTitle">
+      <h2 id="learnedTitle">What I <span class="grad">Learned</span></h2>
+      <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:16px">
+        <div class="skillCard">
+          <div class="skillTitle">Modeling Practice</div>
+          <div class="skillText">Cleaner shapes, consistent scale, and better silhouettes.</div>
+        </div>
+        <div class="skillCard">
+          <div class="skillTitle">Lighting &amp; Mood</div>
+          <div class="skillText">Using light placement to guide viewer attention and style.</div>
+        </div>
+        <div class="skillCard">
+          <div class="skillTitle">Presentation</div>
+          <div class="skillText">Better camera framing and export workflow for portfolio screenshots.</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>&copy; <span id="year"></span> Ahmad Syahmi Zufayri</span>
+      <span class="muted">Blender Project</span>
+    </footer>
+  </main>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="lightboxClose" id="lightboxClose" aria-label="Close (Esc)">&times;</button>
+    <img id="lightboxImg" alt="Zoomed image" />
+    <div class="lightboxHint">Click outside or press Esc to close</div>
+  </div>
+
+  <script src="../script.js"></script>
 </body>
-
 </html>

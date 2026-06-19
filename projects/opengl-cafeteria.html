@@ -1,116 +1,104 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>OpenGL 3D Cafeteria Module — Syahmi</title>
-    <link rel="stylesheet" href="../style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OpenGL 3D Cafeteria Module — Syahmi</title>
+  <meta name="description" content="3D cafeteria building using OpenGL primitives, matrix stack, transformations and GLUT." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;900&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css" />
 </head>
-
 <body>
-    <header class="nav">
-        <div class="nav-inner">
-            <a class="logo" href="../index.html">Syahmi</a>
-            <nav class="links">
-                <a href="../index.html">Home</a>
-                <a href="../projects.html">Projects</a>
-                <a href="../index.html#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
+  <div class="mesh-bg" aria-hidden="true">
+    <div class="mesh-blob blob-1"></div>
+    <div class="mesh-blob blob-2"></div>
+    <div class="mesh-blob blob-3"></div>
+  </div>
+  <div id="cursorGlow" aria-hidden="true"></div>
 
-    <main class="container">
-        <a class="back" href="../projects.html">← Back to Projects</a>
-
-        <section class="card cafeHero">
-            <h1 class="page-title">OpenGL 3D Cafeteria Module</h1>
-            <p class="muted">
-                A 3D cafeteria building created using OpenGL primitives (cuboids), transformations, and matrix stack management. Built as part of a campus simulation module.
-            </p>
-
-            <div class="cafeBadges">
-                <span>OpenGL</span><span>C++</span><span>GLUT</span><span>3D Modeling</span><span>Matrix Stack</span>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Screenshots</h2>
-            <p class="muted">Click any image to view larger.</p>
-
-            <div class="card">
-                <div class="galleryGrid masonry">
-                    <img class="zoomable" data-modal="img" src="../images/cf1.png" alt="Cafeteria view 1" loading="lazy" decoding="async">
-                    <img class="zoomable" data-modal="img" src="../images/cf2.png" alt="Cafeteria view 2" loading="lazy" decoding="async">
-                    <img class="zoomable" data-modal="img" src="../images/cf3.png" alt="Cafeteria view 3" loading="lazy" decoding="async">
-                    <img class="zoomable" data-modal="img" src="../images/cf4.png" alt="Cafeteria view 4" loading="lazy" decoding="async">
-                    <img class="zoomable" data-modal="img" src="../images/cf5.png" alt="Cafeteria view 5" loading="lazy" decoding="async">
-                </div>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <div class="sectionHead">
-                <h2>Video Showcase</h2>
-                <p class="muted">Watch a short highlight. Replace the link with your real video later.</p>
-            </div>
-
-            <div class="videoCard">
-                <div class="videoWrap">
-                    <video controls preload="metadata">
-      <source src="../videos/motion1.mp4" type="video/mp4">
-    </video>
-                    <div class="videoCaption">Kinetic Typography Intro</div>
-                </div>
-                <div class="videoMeta">
-                    <div class="capTitle">Motion Graphics Video</div>
-                    <div class="muted">Kinetic typography + clean transitions + music sync.</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>What I implemented</h2>
-            <div class="grid" style="grid-template-columns:repeat(3,1fr)">
-                <div class="skillCard">
-                    <div class="skillTitle">Modular Building Parts</div>
-                    <div class="skillText">Walls, roof, windows, counters built from reusable shapes.</div>
-                </div>
-                <div class="skillCard">
-                    <div class="skillTitle">Transforms & Placement</div>
-                    <div class="skillText">Translate/scale/rotate using push/pop to isolate each component.</div>
-                </div>
-                <div class="skillCard">
-                    <div class="skillTitle">Lighting-ready Geometry</div>
-                    <div class="skillText">Consistent faces and structure to support lighting/shading later.</div>
-                </div>
-            </div>
-        </section>
-
-        <footer class="footer">
-            <span>© <span id="year"></span> Syahmi Zufayri</span>
-            <span class="muted">OpenGL Project</span>
-        </footer>
-    </main>
-
-    <!-- Modal -->
-    <div class="modal" id="imgModal" aria-hidden="true">
-        <div class="modalBox">
-            <img class="modalImg" alt="">
-            <div class="modalBar">
-                <span id="modalCaption">Preview</span>
-                <button class="modalBtn" id="modalClose">Close</button>
-            </div>
-        </div>
+  <header class="nav" id="navbar">
+    <div class="nav-inner">
+      <a class="logo" href="../index.html">Syahmi<span class="logo-dot">.</span></a>
+      <nav class="links" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </header>
 
-    <script src="../script.js"></script>
-    <!-- Lightbox (click any image to zoom) -->
-    <div id="lightbox" class="lightbox" aria-hidden="true">
-        <button class="lightboxClose" id="lightboxClose" aria-label="Close (Esc)">×</button>
-        <img id="lightboxImg" alt="Zoomed image" />
-        <div class="lightboxHint">Click outside / press Esc to close</div>
-    </div>
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="../index.html">Home</a>
+    <a href="../projects.html">Projects</a>
+    <a href="../index.html#contact">Contact</a>
+  </div>
+
+  <main class="container">
+    <a class="back" href="../projects.html">&larr; Back to Projects</a>
+
+    <section class="card cafeHero reveal" aria-labelledby="projectTitle">
+      <h1 class="page-title" id="projectTitle">OpenGL 3D Cafeteria <span class="grad">Module</span></h1>
+      <p class="muted">
+        A 3D cafeteria building created using OpenGL primitives (cuboids), transformations, and matrix stack management. Built as part of a campus simulation module.
+      </p>
+      <div class="cafeBadges">
+        <span>OpenGL</span><span>C++</span><span>GLUT</span><span>3D Modeling</span><span>Matrix Stack</span>
+      </div>
+    </section>
+
+    <section class="section reveal" aria-labelledby="screenshotsTitle">
+      <div class="sectionHead">
+        <div>
+          <h2 id="screenshotsTitle"><span class="grad">Screenshots</span></h2>
+          <p class="muted">Click any image to view larger.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="galleryGrid masonry">
+          <img class="zoomable" data-modal="img" src="../images/cf1.png" alt="Cafeteria view 1" loading="lazy" decoding="async">
+          <img class="zoomable" data-modal="img" src="../images/cf2.png" alt="Cafeteria view 2" loading="lazy" decoding="async">
+          <img class="zoomable" data-modal="img" src="../images/cf3.png" alt="Cafeteria view 3" loading="lazy" decoding="async">
+          <img class="zoomable" data-modal="img" src="../images/cf4.png" alt="Cafeteria view 4" loading="lazy" decoding="async">
+          <img class="zoomable" data-modal="img" src="../images/cf5.png" alt="Cafeteria view 5" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" aria-labelledby="implementedTitle">
+      <h2 id="implementedTitle">What I <span class="grad">Implemented</span></h2>
+      <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:16px">
+        <div class="skillCard">
+          <div class="skillTitle">Modular Building Parts</div>
+          <div class="skillText">Walls, roof, windows, counters built from reusable primitive shapes.</div>
+        </div>
+        <div class="skillCard">
+          <div class="skillTitle">Transforms &amp; Placement</div>
+          <div class="skillText">Translate/scale/rotate using push/pop matrix to isolate each component.</div>
+        </div>
+        <div class="skillCard">
+          <div class="skillTitle">Lighting-ready Geometry</div>
+          <div class="skillText">Consistent faces and geometry structure to support lighting and shading.</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>&copy; <span id="year"></span> Ahmad Syahmi Zufayri</span>
+      <span class="muted">OpenGL Project</span>
+    </footer>
+  </main>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="lightboxClose" id="lightboxClose" aria-label="Close (Esc)">&times;</button>
+    <img id="lightboxImg" alt="Zoomed image" />
+    <div class="lightboxHint">Click outside or press Esc to close</div>
+  </div>
+
+  <script src="../script.js"></script>
 </body>
-
 </html>
