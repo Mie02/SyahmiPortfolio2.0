@@ -1,0 +1,68 @@
+[
+  {
+    "id": "arnav",
+    "title": "ARNav — Indoor AR Navigation",
+    "description": "Unity 6 + AR Foundation indoor nav for FTMK building using QR anchors. Real-time pathfinding overlaid on the physical world.",
+    "path": "projects/arnav/index.html",
+    "thumbnail": "assets/thumbnails/arnav.jpg",
+    "category": "AR/VR",
+    "tags": ["Unity", "AR Foundation", "QR", "NavMesh"],
+    "status": "In Progress",
+    "dateUpdated": "2026-06-01"
+  },
+  {
+    "id": "scholarhub",
+    "title": "ScholarHub — Academic Resource Portal",
+    "description": "Centralised dashboard for students to discover, bookmark, and track academic papers, lecture notes, and group study sessions.",
+    "path": "projects/scholarhub/index.html",
+    "thumbnail": "assets/thumbnails/scholarhub.jpg",
+    "category": "Academic",
+    "tags": ["Web App", "Firebase", "Search", "Dashboard"],
+    "status": "Complete",
+    "dateUpdated": "2026-05-14"
+  },
+  {
+    "id": "agentos",
+    "title": "AgentOS — AI Agent Orchestration UI",
+    "description": "Visual interface for spawning, monitoring, and chaining autonomous AI agents. Drag-and-drop pipeline builder with live log streams.",
+    "path": "projects/agentos/index.html",
+    "thumbnail": "assets/thumbnails/agentos.jpg",
+    "category": "AI/ML",
+    "tags": ["LLM", "Agents", "Canvas UI", "WebSockets"],
+    "status": "In Progress",
+    "dateUpdated": "2026-06-20"
+  },
+  {
+    "id": "psm-endless-runner",
+    "title": "PSM Endless Runner",
+    "description": "Infinite side-scroller built for a Programming & Software Methods assignment. Procedural level generation, sprite animation, high-score persistence.",
+    "path": "projects/psm-endless-runner/index.html",
+    "thumbnail": "assets/thumbnails/psm-runner.jpg",
+    "category": "Game",
+    "tags": ["Canvas 2D", "JavaScript", "Procedural Gen"],
+    "status": "Complete",
+    "dateUpdated": "2026-03-30"
+  },
+  {
+    "id": "portfolio",
+    "title": "Deep Space Observatory — Portfolio",
+    "description": "Personal portfolio with a sci-fi HUD aesthetic. Three.js starfield, animated skill constellations, and a mission-log style timeline.",
+    "path": "projects/portfolio/index.html",
+    "thumbnail": "assets/thumbnails/portfolio.jpg",
+    "category": "Web",
+    "tags": ["Three.js", "GSAP", "Portfolio", "CSS Art"],
+    "status": "Complete",
+    "dateUpdated": "2026-06-10"
+  },
+  {
+    "id": "ftmk-timetable",
+    "title": "FTMK Timetable Sync",
+    "description": "Scrapes the faculty timetable and exports it to Google Calendar / iCal. Handles room clashes and sends a Telegram push when a class moves.",
+    "path": "projects/ftmk-timetable/index.html",
+    "thumbnail": "assets/thumbnails/timetable.jpg",
+    "category": "Tools",
+    "tags": ["Python", "Scraper", "Google Calendar", "Telegram Bot"],
+    "status": "Archived",
+    "dateUpdated": "2025-11-05"
+  }
+]
